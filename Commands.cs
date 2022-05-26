@@ -66,6 +66,7 @@ namespace ConsoleApp1
             if (Directory.Exists(dir)) Directory.SetCurrentDirectory(dir);
             else if (Directory.Exists(D.curdir + '\\' + dir))
                 Directory.SetCurrentDirectory(D.curdir + '\\' + dir);
+            else if (D.curdir == "C:\\") return;
             else if (dir == "..")
             {
                 var path = Path.GetDirectoryName(D.curdir);
@@ -211,6 +212,7 @@ namespace ConsoleApp1
             prev/next - показать следующие/предыдущие папки
             re - принудительный вызов отрисовки
             чтобы выйти пропишите любую команду кроме help или нажмите клавишу
+            ПРИМЕЧАНИЕ: Если при старте вы хотите попасть в директорию запуска менеджера(а не C:\) то напишите cd ..
             ");
             Console.ReadKey();
         }
